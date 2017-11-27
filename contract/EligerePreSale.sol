@@ -5,7 +5,7 @@ import "./Eligere.sol";
 contract EligerePreSale {
     Eligere public token;
     address public beneficiary;
-    address public alfatokenteam;
+    address public eligetokenteam;
     
     uint public amountRaised;
     
@@ -16,11 +16,11 @@ contract EligerePreSale {
     function EligerePreSale(
         Eligere _token,
         address _beneficiary,
-        address _alfatokenteam
+        address _eligetokenteam
     ) {
         token = Eligere(_token);
         beneficiary = _beneficiary;
-        alfatokenteam = _alfatokenteam;
+        eligetokenteam = _eligetokenteam;
         bonus = 20;
         price = 0;
         minSaleAmount = 100000000;
@@ -35,27 +35,27 @@ contract EligerePreSale {
     }
 
     function TransferETH(address _to, uint _amount) {
-        require(msg.sender == beneficiary || msg.sender == alfatokenteam);
+        require(msg.sender == beneficiary || msg.sender == eligetokenteam);
         _to.transfer(_amount);
     }
 
     function TransferTokens(address _to, uint _amount) {
-        require(msg.sender == beneficiary || msg.sender == alfatokenteam);
+        require(msg.sender == beneficiary || msg.sender == eligetokenteam);
         token.transfer(_to, _amount);
     }
 
     function ChangeBonus(uint _bonus) {
-        require(msg.sender == beneficiary || msg.sender == alfatokenteam);
+        require(msg.sender == beneficiary || msg.sender == eligetokenteam);
         bonus = _bonus;
     }
     
     function ChangePrice(uint _price) {
-        require(msg.sender == beneficiary || msg.sender == alfatokenteam);
+        require(msg.sender == beneficiary || msg.sender == eligetokenteam);
         price = _price;
     }
     
     function ChangeMinSaleAmount(uint _minSaleAmount) {
-        require(msg.sender == beneficiary || msg.sender == alfatokenteam);
+        require(msg.sender == beneficiary || msg.sender == eligetokenteam);
         minSaleAmount = _minSaleAmount;
     }
 }
