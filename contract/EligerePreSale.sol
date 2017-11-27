@@ -22,7 +22,7 @@ contract EligerePreSale {
         beneficiary = _beneficiary;
         eligetokenteam = _eligetokenteam;
         bonus = 20;
-        price = 0;
+        price = 0.001;
         minSaleAmount = 100000000;
     }
 
