@@ -1,5 +1,0 @@
-
-git add --all
-git commit -m "UPDATE"
-git push -u origin master
-
